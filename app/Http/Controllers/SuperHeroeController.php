@@ -40,9 +40,11 @@ class SuperHeroeController extends Controller
        $super=SuperHeroe::find($id);
        return view('edit',compact('super'));
     }
-    public function show()
+    public function show($id)
     {
-        # code...
+        $sup=SuperHeroe::find($id);
+
+        return view('show',compact('sup'));
     }
 
     public function update(Request $request,$id)
