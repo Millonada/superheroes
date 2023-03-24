@@ -13,11 +13,20 @@ use App\Http\Controllers\SuperHeroeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/',function(){
+    return view('auth.login');
+});
 
-Route::get('/',[SuperHeroeController::class,'index'])->name('sup.index');
-Route::get('ed/',[SuperHeroeController::class,'create'])->name('sup.create');
-Route::get('ed/{id}',[SuperHeroeController::class,'edit'])->name('sup.edit');
-Route::get('ed/update/{id}',[SuperHeroeController::class,'update'])->name('sup.update');
-Route::post('ed/store',[SuperHeroeController::class,'store'])->name('sup.store');
-Route::get('ed/del/{id}',[SuperHeroeController::class,'delete'])->name('sup.del');
-Route::get('ed/show/{id}',[SuperHeroeController::class,'show'])->name('sup.show');
+
+Route::group(['middleware'=>'auth'],function(){
+
+    Route::get('/index',[SuperHeroeController::class,'index'])->name('sup.index');
+    Route::get('ed/',[SuperHeroeController::class,'create'])->name('sup.create');
+    Route::get('ed/{id}',[SuperHeroeController::class,'edit'])->name('sup.edit');
+    Route::get('ed/update/{id}',[SuperHeroeController::class,'update'])->name('sup.update');
+    Route::post('ed/store',[SuperHeroeController::class,'store'])->name('sup.store');
+    Route::get('ed/del/{id}',[SuperHeroeController::class,'delete'])->name('sup.del');
+    Route::get('ed/show/{id}',[SuperHeroeController::class,'show'])->name('sup.show');
+});
+
+Auth::routes();
