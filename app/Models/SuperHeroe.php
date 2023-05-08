@@ -12,6 +12,7 @@ class SuperHeroe extends Model
         'nombre',
         'apodo',
         'img',
+        'universo',
         'adicional'
     ];
 }

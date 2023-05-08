@@ -11,6 +11,10 @@
     <input class="form-control" name="adicional" value="{{$super->adicional ?? ''}}"  >
   </div>
   <div class="form-group">
+      <label for="exampleFormControlTextarea1">Universo</label>
+    <input class="form-control" name="universo" value="{{$super->universo ?? ''}}"  >
+  </div>
+  <div class="form-group">
       <label for="exampleFormControlFile1">Imagen del super</label>
       <input type="file" class="form-control-file" name="img">
   </div>

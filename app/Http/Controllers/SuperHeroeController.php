@@ -26,6 +26,7 @@ class SuperHeroeController extends Controller
             SuperHeroe::create([
                 'nombre'=>$request->nombre,
                 'apodo'=>$request->apodo,
+                'universo'=>$request->universo,
                 'img'=>$path,
                 'adicional'=>$request->adicional
             ]);
@@ -53,7 +54,7 @@ class SuperHeroeController extends Controller
         $super=SuperHeroe::find($id)->update([
             'nombre'=>$request->nombre,
                 'apodo'=>$request->apodo,
-                
+                'universo'=>$request->universo,
                 'adicional'=>$request->adicional
         ]);
 
