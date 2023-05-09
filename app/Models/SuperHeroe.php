@@ -11,7 +11,6 @@ class SuperHeroe extends Model
     protected $fillable=[
         'nombre',
         'apodo',
-        'img',
-        'adicional'
+        'edad'
     ];
 }

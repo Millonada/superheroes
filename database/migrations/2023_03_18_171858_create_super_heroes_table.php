@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apodo');
-            $table->string('img');
-            $table->string('adicional');
+            $table->number('edad');
             $table->timestamps();
         });
     }

@@ -17,13 +17,11 @@
                 <th scope="row">{{$super->id}}</th>
                 <td>{{$super->nombre}}</td>
                 <td>{{$super->apodo}}</td>
-                <td>{{$super->adicional}}</td>
+                <td>{{$super->edad}}</td>
                 <td><img src="{{asset($super->img)}}" alt=""></td>
                 <td><a href="{{route('sup.show',$super->id)}}"><i class="fa-solid fa-street-view"></i></a> | <a href="{{route('sup.edit',$super->id)}}"><i class="fa-solid fa-pen-to-square"></i></a> | <a href="{{route('sup.del',$super->id)}}"><i class="fa-sharp fa-solid fa-trash"></i></a></td>
               </tr>
             @endforeach
-         
-     
         </tbody>
       </table>
 </x-app>

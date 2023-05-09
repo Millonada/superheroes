@@ -22,12 +22,11 @@ class SuperHeroeController extends Controller
     {
        
         try {
-            $path = $request->file('img')->store('public', 'local');
+           /* $path = $request->file('img')->store('public', 'local');*/
             SuperHeroe::create([
                 'nombre'=>$request->nombre,
                 'apodo'=>$request->apodo,
-                'img'=>$path,
-                'adicional'=>$request->adicional
+                'edad'=>$request->edad
             ]);
         } catch (\Throwable $th) {
             return redirect()->back()->with('error','No se registro con exito'.$th->getMessage());
@@ -53,8 +52,7 @@ class SuperHeroeController extends Controller
         $super=SuperHeroe::find($id)->update([
             'nombre'=>$request->nombre,
                 'apodo'=>$request->apodo,
-                
-                'adicional'=>$request->adicional
+                'edad'=>$request->edad
         ]);
 
         } catch (\Throwable $th) {
